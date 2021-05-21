@@ -1,4 +1,4 @@
-
+# złożoność poniższego algorytmu to O(n)
 def sort_mine(data):
     lower_sign = data[0]
     left = 0
