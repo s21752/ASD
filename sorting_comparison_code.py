@@ -99,68 +99,82 @@ sys.setrecursionlimit(60000)
     
 print("Comparison between sorting algorithms: \n\n\n")
     
-random1 = get_random_data(2000)
+random1 = get_random_data(30000)
+random2 = list(random1)
+random3 = list(random1)
 
-random2 = random1.copy()
-random3 = random1.copy()
+sorted1 = get_sorted_data(30000)
+sorted2 = list(sorted1)
+sorted3 = list(sorted1)
 
-sorted1 = get_sorted_data(2000)
-sorted2 = sorted1.copy()
-sorted3 = sorted1.copy()
+inversely_sorted1 = get_inversly_sorted_data(30000)
 
-inversely_sorted1 = get_inversly_sorted_data(2000)
+inversely_sorted2 = list(inversely_sorted1)
+inversely_sorted3 = list(inversely_sorted1)
 
-inversely_sorted2 = inversely_sorted1.copy()
-inversely_sorted3 = inversely_sorted1.copy()
-
-# random data
+# # random data
 quick_random_start = int(round(time.time() * 1000))
 quick_sort(random1, 0, len(random1) - 1)
 quick_random_time = int(round(time.time() * 1000)) - quick_random_start
+
+print("Quick sort random data time: " + str(quick_random_time))
+
 
 bubble_random_start = int(round(time.time() * 1000))
 bubble_sort(random2)
 bubble_random_time = int(round(time.time() * 1000)) - bubble_random_start
 
+print("Bubble sort random data time: " + str(bubble_random_time))
+
+
 heap_random_start = int(round(time.time() * 1000))
 heap_sort(random3)
 heap_random_time = int(round(time.time() * 1000)) - heap_random_start
 
-# sorted data
+print("Heap sort random data time: " + str(heap_random_time))
+
+
+# # sorted data
 quick_sorted_start = int(round(time.time() * 1000))
 quick_sort(sorted1, 0, len(sorted1) - 1)
 quick_sorted_time = int(round(time.time() * 1000)) - quick_sorted_start
+
+print("\nQuick sort sorted data time: " + str(quick_sorted_time))
+
 
 bubble_sorted_start = int(round(time.time() * 1000))
 bubble_sort(sorted2)
 bubble_sorted_time = int(round(time.time() * 1000)) - bubble_sorted_start
 
+print("Bubble sort sorted data time: " + str(bubble_sorted_time))
+
+
+
 heap_sorted_start = int(round(time.time() * 1000))
 heap_sort(sorted3)
 heap_sorted_time = int(round(time.time() * 1000)) - heap_sorted_start
 
-# inversely sorted data
+print("Heap sort sorted data time: " + str(heap_sorted_time))
+
+
+# # inversely sorted data
 quick_inversely_sorted_start = int(round(time.time() * 1000))
 quick_sort(inversely_sorted1, 0, len(inversely_sorted1) - 1)
 quick_inversely_sorted_time = int(round(time.time() * 1000)) - quick_inversely_sorted_start
+
+print("\nQuick sort inversely sorted data time: " + str(quick_inversely_sorted_time))
+
+
 
 bubble_inversely_sorted_start = int(round(time.time() * 1000))
 bubble_sort(inversely_sorted2)
 bubble_inversely_sorted_time = int(round(time.time() * 1000)) - bubble_inversely_sorted_start
 
+print("Bubble sort inversely sorted data time: " + str(bubble_inversely_sorted_time))
+
+
 heap_inversely_sorted_start = int(round(time.time() * 1000))
 heap_sort(inversely_sorted3)
 heap_inversely_sorted_time = int(round(time.time() * 1000)) - heap_inversely_sorted_start
 
-
-print("Quick sort random data time: " + str(quick_random_time))
-print("Bubble sort random data time: " + str(bubble_random_time))
-print("Heap sort random data time: " + str(heap_random_time))
-
-print("\nQuick sort sorted data time: " + str(quick_sorted_time))
-print("Bubble sort sorted data time: " + str(bubble_sorted_time))
-print("Heap sort sorted data time: " + str(heap_sorted_time))
-
-print("\nQuick sort inversely sorted data time: " + str(quick_inversely_sorted_time))
-print("Bubble sort inversely sorted data time: " + str(bubble_inversely_sorted_time))
 print("Heap sort inversely sorted data time: " + str(heap_inversely_sorted_time))
